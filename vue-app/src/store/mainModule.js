@@ -3,7 +3,10 @@ import axios from "axios";
 export default {
     state: {
         fullMongoDB: [],
-        id: []
+        id: "",
+        Token: "",
+        URL: ""
+
     },
     getters: {
         getArray(state) {
@@ -13,6 +16,11 @@ export default {
     mutations: {
         setArray(state, payload) {
             state.fullMongoDB = payload
+        },
+        addUrlID(state, item) {
+            state.Token = item.token
+            state.URL = item.url
+            state.id = item._id
         }
     },
     actions: {

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import tokens from "@/pages/tokens";
 import addToken from "@/pages/addToken";
+import deleteToken from "@/pages/deleteToken";
 
 const routes = [
   {
@@ -8,6 +9,9 @@ const routes = [
   },
   {
     path: '/add-tokens', component: addToken
+  },
+  {
+    path: '/token/:id/delete', component: deleteToken
   }
 ]
 
