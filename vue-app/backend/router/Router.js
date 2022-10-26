@@ -4,6 +4,7 @@ import PostController from "../controller/PostController.js";
 const router = new Router()
 
 router.post("/tokens", PostController.create)
+router.post("/add-tokens", PostController.createCrypto)
 router.get("/tokens", PostController.getAll)
 router.get("/tokens/:id", PostController.getOne)
 router.put("/tokens", PostController.update)

@@ -1,41 +1,72 @@
 <template>
   <div class="delete">
-    <h2 class="delete__title">Вы точно хотите удалить:</h2>
-    <div class="delete__token">{{$store.state.module.Token}}</div>
-    <div class="delete__url">{{$store.state.module.URL}}</div>
+    <template v-if="done">
+      <h2 class="delete__title">Вы точно хотите удалить данный токен:</h2>
+      <div class="delete__token">Токен: {{ $store.state.module.Token }}</div>
+      <div class="delete__url">URL: {{ $store.state.module.URL }}</div>
+    </template>
+    <template v-else>
+      <h1 class="delete__done">Токен удален!</h1>
+      <h4 class="delete__done-subtitle">*переход к полному списку токенов через 3 секнуды</h4>
+    </template>
     <div class="delete__buttons">
-      <button @click="remove">Удалить</button>
-      <button @click="$router.push(`/tokens`)">Отмена</button>
+      <button class="delete__buttons-delete" @click="remove">Удалить</button>
+      <button class="delete__buttons-cancel" @click="$router.push(`/tokens`)">Отмена</button>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import router from "@/router/router";
 
 export default {
   name: "deleteToken",
 
   data() {
     return {
-      deleteByID: this.$store.state.module.id
+      deleteByID: this.$store.state.module.id,
+      done: true
     }
   },
 
   methods: {
     remove() {
+      this.done = false
       console.log(this.deleteByID)
       axios
-          .delete (`http://localhost:3000/tokens/${this.deleteByID}`)
+          .delete(`http://localhost:3000/tokens/${this.deleteByID}`)
+      setTimeout(() => {
+        router.push('/tokens')
+      }, 3000)
+
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  .delete {
+.delete {
+  &__token{
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  &__url{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  &__done {
+    color: green;
+  }
 
+  &__buttons-delete {
+    margin: 5px;
+  }
+
+  &__buttons-cancel {
 
   }
+
+}
 
 </style>

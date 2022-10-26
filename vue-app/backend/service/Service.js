@@ -1,6 +1,11 @@
 import Post from "../Post/Post.js";
 
 class Service {
+    async createCrypto(post, id) {
+        const createdPost = await Post.create(post, id)
+        return createdPost;
+    }
+
     async create(post) {
         const createdPost = await Post.create(post)
         return createdPost;

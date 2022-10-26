@@ -8,7 +8,8 @@
       <h3 class="token__url-title">URL</h3>
       <div class="token__url-list" v-for="(item, index) in $store.getters.getArray" :key="index._id">
         {{ item.url }}
-          <button class="token__url-button" v-on:click="test(index, item)" @click="$router.push(`token/${$store.state.module.id}/delete`)">Удалить</button>
+          <div class="token__url-button" v-on:click="test(index, item)" @click="$router.push(`token/${$store.state.module.Token}/delete`)"><img class="token__cancel" src="../assets/cancel.png">
+        </div>
       </div>
     </div>
   </div>
@@ -51,7 +52,7 @@ export default {
   }
 
   &__tokens-list {
-    margin: 5px;
+    margin: 11px;
   }
 
   &__url{
@@ -59,16 +60,29 @@ export default {
   }
 
   &__url-title {
-    margin-bottom: 24px;
+    margin-bottom: 26.5px;
 
   }
 
   &__url-list {
-    margin: 2.5px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 6px;
   }
 
   &__url-button{
-    margin-left: 15px;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 12px;
+  }
+
+  &__cancel {
+    width: 20px;
+  }
+
+  &__cancel:hover {
+    cursor: pointer;
+    width: 20px;
   }
 }
 
