@@ -1,4 +1,5 @@
 <template>
+  <h2 class="token__title" @click="mainPageLink">Vue_UchiPro_Test</h2>
   <div class="token">
     <div class="token__tokens">
       <h3 class="token__token-title">Токены</h3>
@@ -8,7 +9,7 @@
       <h3 class="token__url-title">URL</h3>
       <div class="token__url-list" v-for="(item, index) in $store.getters.getArray" :key="index._id">
         {{ item.url }}
-          <div class="token__url-button" v-on:click="test(index, item)" @click="$router.push(`token/${$store.state.module.Token}/delete`)"><img class="token__cancel" src="../assets/cancel.png">
+          <div class="token__url-button" v-on:click="test(index, item)" @click="$router.push(`token/${$store.state.module.Token}/delete`)"><img class="token__cancel" src="../assets/trash.png">
         </div>
       </div>
     </div>
@@ -18,6 +19,7 @@
 <script>
 
 import axios from "axios";
+import router from "@/router/router";
 
 export default {
   name: "tokens",
@@ -36,6 +38,9 @@ export default {
     test(index, item) {
       this.$store.getters.getArray.splice(index, 1)
       this.$store.commit('addUrlID', item)
+    },
+    mainPageLink() {
+      router.push('/')
     }
   }
 }
@@ -44,11 +49,20 @@ export default {
 <style scoped lang="scss">
 
 .token {
+  background: white;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
+  padding: 10px;
+  width: 70vw;
+  margin: 0 auto;
 
-  &__tokens {
-    margin: 10px;
+  &__title{
+    padding: 5px;
+  }
+
+  &__title:hover{
+    cursor: pointer;
   }
 
   &__tokens-list {
@@ -60,7 +74,7 @@ export default {
   }
 
   &__url-title {
-    margin-bottom: 26.5px;
+    margin-bottom: 20px;
 
   }
 
@@ -77,12 +91,12 @@ export default {
   }
 
   &__cancel {
-    width: 20px;
+    width: 19px;
   }
 
   &__cancel:hover {
     cursor: pointer;
-    width: 20px;
+    width: 19px;
   }
 }
 

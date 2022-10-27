@@ -5,7 +5,8 @@ export default {
         fullMongoDB: [],
         id: "",
         Token: "",
-        URL: ""
+        URL: "",
+        addTokens: ""
 
     },
     getters: {
@@ -21,7 +22,8 @@ export default {
             state.Token = item.token
             state.URL = item.url
             state.id = item._id
-        }
+        },
+
     },
     actions: {
         fetchArray(context) {

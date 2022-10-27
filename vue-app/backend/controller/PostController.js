@@ -1,14 +1,6 @@
 import Service from "../Service/Service.js";
 
 class PostController {
-    async createCrypto(req, res) {
-        try {
-            const post = await Service.createCrypto(req.body, id)
-            res.json(post)
-        }catch (e) {
-            res.status(500).json(e)
-        }
-    }
     async create(req, res) {
         try {
             const post = await Service.create(req.body)
