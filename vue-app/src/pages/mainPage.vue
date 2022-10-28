@@ -38,7 +38,7 @@ export default {
 }
 .main {
   &__title {
-    padding: 20px;
+    padding: 18px;
     color: #2c3e50;
   }
   &__title:hover {
