@@ -1,5 +1,5 @@
 module.exports = {
   devServer: {
-    proxy: 'https://vuekez.herokuapp.com/tokens',
+    proxy: 'https://vuekez.herokuapp.com',
   }
 }
