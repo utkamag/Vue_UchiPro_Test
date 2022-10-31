@@ -35,7 +35,7 @@ export default {
       this.done = false
       console.log(this.deleteByID)
       axios
-          .delete(`http://localhost:3000/tokens/${this.deleteByID}`)
+          .delete(`https://vuekez.herokuapp.com/tokens/${this.deleteByID}`)
       setTimeout(() => {
         router.push('/tokens')
       }, 3000)

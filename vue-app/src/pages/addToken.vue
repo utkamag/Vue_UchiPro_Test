@@ -42,7 +42,7 @@ export default {
     add() {
       this.done = false
       axios
-          .post('http://localhost:3000/tokens', {
+          .post('https://vuekez.herokuapp.com//tokens', {
             token: this.randomToken,
             url: `https://www.example.com/${this.randomURL}`
           })

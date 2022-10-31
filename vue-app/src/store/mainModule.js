@@ -28,7 +28,7 @@ export default {
     actions: {
         fetchArray(context) {
             axios
-                .get("http://localhost:3000/tokens")
+                .get("https://vuekez.herokuapp.com/tokens")
                 .then(response => context.commit("setArray", response.data))
         }
     }
