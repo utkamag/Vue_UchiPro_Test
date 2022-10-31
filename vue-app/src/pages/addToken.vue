@@ -46,6 +46,7 @@ export default {
             token: this.randomToken,
             url: `https://www.example.com/${this.randomURL}`
           })
+          .catch(error => console.log(error))
       setTimeout(() => {
         router.push("/tokens")
       }, 3000)

@@ -30,6 +30,7 @@ export default {
             axios
                 .get("https://vuekez.herokuapp.com/tokens")
                 .then(response => context.commit("setArray", response.data))
+                .catch(error => console.log(error))
         }
     }
 }
