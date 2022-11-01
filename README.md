@@ -12,8 +12,7 @@
 
 Клиентская часть: https://vue-uchi-pro.web.app/
 
-Сервепная часть: https://github.com/utkamag/Vue_UchiPro_Backend
-
+Серверная часть: https://github.com/utkamag/Vue_UchiPro_Backend
 
 ## Технологический стек
 Frontend:
