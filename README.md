@@ -8,10 +8,11 @@
 ![](vue-app/public/screenshot.png)
 ## Хостинг
 
-Проект развернут на площадке google Firebase
+Проект развернут на площадке google Firebase и Heroku
 
 Клиентская часть: https://vue-uchi-pro.web.app/
 
+Серверная часть: https://github.com/utkamag/Vue_UchiPro_Backend
 
 ## Технологический стек
 Frontend:
