@@ -25,13 +25,13 @@ export default {
   name: "tokens",
   data() {
     return {
-      items: this.$store.state.module.URL
+      items: this.$store.state.module.URL,
+      item: false
     }
   },
 
   mounted() {
    this.$store.dispatch("fetchArray")
-
   },
 
   methods: {
@@ -54,7 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   padding: 10px;
-  width: 70vw;
+  width: max-content;
   margin: 0 auto;
 
   &__title{
