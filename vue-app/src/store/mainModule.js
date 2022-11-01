@@ -9,11 +9,6 @@ export default {
         addTokens: ""
 
     },
-    getters: {
-        getArray(state) {
-            return state.fullMongoDB
-        }
-    },
     mutations: {
         setArray(state, payload) {
             state.fullMongoDB = payload
@@ -22,8 +17,13 @@ export default {
             state.Token = item.token
             state.URL = item.url
             state.id = item._id
-        },
+        }
 
+    },
+    getters: {
+        getArray(state) {
+            return state.fullMongoDB
+        }
     },
     actions: {
         fetchArray(context) {
